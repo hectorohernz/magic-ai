@@ -11,4 +11,12 @@ const date = currentDateFunction();
 // element.appendChild(header);
 
 
+function userDateToUserInterface(){
+    let thisIsAHeader = document.getElementById('Ui-header');
+    let title = document.createElement('h2');
+    let node = document.createTextNode('Magic AI By Hector Hernandez');
+    title.appendChild(node);
+    thisIsAHeader.appendChild(title);
+}
 
+userDateToUserInterface();

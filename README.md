@@ -1,11 +1,6 @@
-# magic-ai
+![Image Of Magic A.I Logo](./github/magic-ai.jpg)
 
-Built With Electron Js
+# MAGIC A.I
 
-To Do 
-[] - Weather Api
-[] - Dates 
-[] - Spotify ApI
-[] - Twitter News 
-[] - Quotes
-
+> Created With Electron Js.
+> Finish Documention Coming Soon
