@@ -1,22 +1,23 @@
-// Providing the local Time and Date 
+// Providing the local Time and Date
 import currentDateFunction from "./date.js";
+import createElement from './createElements.js';
 const date = currentDateFunction();
 
-// let header = document.createElement('h1');
-// let node = document.createTextNode();
-// header.appendChild(node);
 
-// var element = document.getElementById('UI-header');
+function dateDataToUserInterface() {
+  console.log(date);
+  // Creating a container for the weather user-interface for styling
+  // weatherDomElement is the container for weather elements
+  // headerElement is the header of the html file
+  const headerElement = document.getElementById("Ui-header");
+  const dateDomElement = document.createElement("section");
+  dateDomElement.setAttribute("id", "weather-container");
+  headerElement.appendChild(dateDomElement);
 
-// element.appendChild(header);
+  createElement("h2", dateDomElement, date.currentMonth, "date-month");
+  createElement("p", dateDomElement, "hello World", );
 
 
-function userDateToUserInterface(){
-    let thisIsAHeader = document.getElementById('Ui-header');
-    let title = document.createElement('h2');
-    let node = document.createTextNode('Magic AI By Hector Hernandez');
-    title.appendChild(node);
-    thisIsAHeader.appendChild(title);
 }
 
-userDateToUserInterface();
+dateDataToUserInterface();
