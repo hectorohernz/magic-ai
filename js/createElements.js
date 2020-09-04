@@ -9,14 +9,18 @@
         className =  classname for child element for styling
 */
 
-export default function createChildAndAppend(childElementType, parentElement, nodeText, childAttribute, childAttributeValue){
-
-    const childElement = document.createElement(childElementType);
-    parentElement.appendChild(childElement);
-    let currentTextNode =  document.createTextNode(nodeText);
-    childElement.appendChild(currentTextNode);
-    if(childAttribute){
-        childElement.setAttribute(childAttribute, childAttributeValue);
-    };
-};
-
+export default function createChildAndAppend(
+  childElementType,
+  parentElement,
+  nodeText,
+  childAttribute,
+  childAttributeValue 
+) {
+  const childElement = document.createElement(childElementType);
+  parentElement.appendChild(childElement);
+  let currentTextNode = document.createTextNode(nodeText);
+  childElement.appendChild(currentTextNode);
+  if (childAttribute) {
+    childElement.setAttribute(childAttribute, childAttributeValue);
+  }
+}

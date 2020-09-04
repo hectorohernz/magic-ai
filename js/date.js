@@ -86,11 +86,11 @@ export default function currentDateData() {
     if (date.getHours() > 12) {
       DateInfomation.currentTime = `${date.getHours() - 12}:${
         DateInfomation.currentMinutes
-      }`;
+      } PM`;
     } else {
       DateInfomation.currentTime = `${date.getHours()}:${
         DateInfomation.currentMinutes
-      }`;
+      } AM`;
     }
   
     // Returning the date 

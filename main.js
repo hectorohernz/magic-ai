@@ -1,6 +1,13 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const env = process.env.NODE_ENV || 'development';
+require('dotenv').config();
+
+process.env.GOOGLE_API_KEY;
+
+
+
+
 
 if(env === 'development'){
   require('electron-reload')(__dirname, {

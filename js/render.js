@@ -1,8 +1,13 @@
 // Providing the local Time and Date
 import currentDateFunction from "./date.js";
 import createElement from './createElements.js';
-const date = currentDateFunction();
+import weatherApi from './weatherApi.js';
 
+
+
+
+// Fetching Date Object
+const date = currentDateFunction();
 
 function dateDataToUserInterface() {
   console.log(date);
@@ -14,10 +19,11 @@ function dateDataToUserInterface() {
   dateDomElement.setAttribute("id", "weather-container");
   headerElement.appendChild(dateDomElement);
 
-  createElement("h2", dateDomElement, date.currentMonth, "date-month");
-  createElement("p", dateDomElement, "hello World", );
-
-
+  let dateString = `${date.currentMonth} ${date.currentDayOfMonth} ${date.currentYear}`;  
+  createElement("h2", dateDomElement, date.currentDayOfWeek, "class", "weather-day-week");
+  createElement("p", dateDomElement, date.currentTime,"class", "weather-");
+  createElement("h3",dateDomElement, dateString );
 }
 
 dateDataToUserInterface();
+weatherApi();
