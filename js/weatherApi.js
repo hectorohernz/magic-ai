@@ -1,7 +1,10 @@
 import apiToken from './weatherToken.js';
+let API = apiToken();
+
+
 let fetchWeatherApi = async (latitude,longitude) => {
     try{
-        const response = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${apiToken()}}`);
+        const response = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${API.weather}`);
         let data = await response.json();
         console.log(data);
     } catch(error){
@@ -25,11 +28,11 @@ function error(err) {
 
 export default function getWeatherDate() {
   window.addEventListener("load", () => {
-    
+
     if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(success, error);  
     } else{
-        console.log("error");
+      console.log(error);
     }
   });
 }
