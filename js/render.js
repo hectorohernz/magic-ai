@@ -1,7 +1,7 @@
 // Providing the local Time and Date
 import currentDate from "./date.js";
 import createElement from './createElements.js';
-import weatherApi from './weatherApi.js';
+import weatherData from './weatherApi.js';
 
 // Fetching Date Object
 const date = currentDate();
@@ -20,4 +20,6 @@ function dateDataToUserInterface() {
 }
 
 dateDataToUserInterface();
-weatherApi();
+
+// returns a promise
+//console.log(weatherData())

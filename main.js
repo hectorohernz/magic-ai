@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config();
-
+app.getName();
 process.env.GOOGLE_API_KEY;
 
 
@@ -14,7 +14,6 @@ if(env === 'development'){
   });
 }
 
-
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1000,
@@ -22,6 +21,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    titleBarStyle: 'hidden' 
   });
 
   mainWindow.loadFile(path.join(__dirname,"index.html"));
