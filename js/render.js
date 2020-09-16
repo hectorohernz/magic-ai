@@ -1,25 +1,51 @@
+import createElement from "./createElements.js";
+
+// API Objects
+
+// Providing weather object
+import getCurrentWeather from "./weatherApi.js";
+
 // Providing the local Time and Date
-import currentDate from "./date.js";
-import createElement from './createElements.js';
-import weatherData from './weatherApi.js';
+import getCurrentDate from "./date.js";
 
-// Fetching Date Object
-const date = currentDate();
+// Fetching users current date
+const date = getCurrentDate();
 
-function dateDataToUserInterface() {
-  
+function renderDateToUi() {
   const headerElement = document.getElementById("Ui-header");
   const dateDomElement = document.createElement("section");
-  dateDomElement.setAttribute("id", "weather-container");
+  dateDomElement.setAttribute("id", "date__container");
   headerElement.appendChild(dateDomElement);
 
-  let dateString = `${date.currentMonth} ${date.currentDayOfMonth} ${date.currentYear}`;  
-  createElement("h2", dateDomElement, date.currentDayOfWeek, "class", "weather-day-week");
-  createElement("p", dateDomElement, date.currentTime,"class", "weather-");
-  createElement("h3",dateDomElement, dateString );
+  let dateString = `${date.currentMonth} ${date.currentDayOfMonth} ${date.currentYear}`;
+  createElement(
+    "h2",
+    dateDomElement,
+    date.currentDayOfWeek,
+    "class",
+    "date__current-day"
+  );
+  createElement("p", dateDomElement, date.currentTime, "class", "date__current-time");
+  createElement("h3", dateDomElement, dateString);
 }
 
-dateDataToUserInterface();
+const renderWeatherToUi = async () => {
 
-// returns a promise
-//console.log(weatherData())
+  // returns a promise
+  const weather = await getCurrentWeather().then((data) => {
+   return data
+  }); 
+  console.log(weather);
+
+  const headerElement = document.getElementById("Ui-header");
+  const weatherSectionElement = document.createElement("section");
+  weatherSectionElement.setAttribute("id", "weather-container");
+  headerElement.appendChild(weatherSectionElement);
+
+  createElement('p',weatherSectionElement, weather.city_name, 'class','weather__city' )
+  createElement('p',weatherSectionElement, weather.app_temp, 'class','weather__temp' )
+
+};
+
+renderDateToUi();
+renderWeatherToUi();

@@ -21,7 +21,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    titleBarStyle: 'hidden' 
+    titleBarStyle: 'hidden' ,
+    resizable: true
   });
 
   mainWindow.loadFile(path.join(__dirname,"index.html"));

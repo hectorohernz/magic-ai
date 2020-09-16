@@ -8,7 +8,7 @@ const getPosition = (options) => {
   });
 };
 
-// Fetches weatherData from API returns a promise
+// fetches weather api to grab 
 let getWeatherData = async (latitude, longitude) => {
   try {
     const response = await fetch(
@@ -22,6 +22,7 @@ let getWeatherData = async (latitude, longitude) => {
   }
 };
 
+// Fetches weatherData from API returns a promise
 const gpsLocation = async () => {
   try {
     const geolocationData = await getPosition({ enableHighAccuracy: true });
@@ -40,7 +41,7 @@ const gpsLocation = async () => {
       city_name,
       app_temp,
       country_code,
-      weather: description.description,
+      weather: description,
     };
 
   } catch (err) {
