@@ -4,9 +4,9 @@ let API = apiToken();
 
 let fetchWeatherApi = async (latitude,longitude) => {
     try{
-        const response = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${API.weather}`);
+        const response = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${API.weather}&units=I`);
         let data = await response.json();
-        console.log(data);
+        console.log(data.data[0]);
     } catch(error){
         console.error(error);
     }
