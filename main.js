@@ -1,10 +1,9 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Tray } = require("electron");
 const path = require("path");
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config();
 app.getName();
 process.env.GOOGLE_API_KEY;
-
 
 
 if(env === 'development'){
@@ -15,6 +14,7 @@ if(env === 'development'){
 }
 
 function createWindow() {
+
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 600,
