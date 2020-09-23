@@ -9,6 +9,7 @@ import getCurrentDate from "./date.js";
 // Fetching users current date
 const date = getCurrentDate();
 
+
 function renderDateToUi() {
   const headerElement = document.getElementById("Ui-header");
   const dateDomElement = document.createElement("section");
@@ -63,21 +64,27 @@ const renderWeatherToUi = async () => {
    return data
   }); 
   
-  console.log(weather);
 
   const  { code } = weather.weather;
   const headerElement = document.getElementById("Ui-header");
   const weatherSectionElement = document.createElement("section");
-  weatherSectionElement.setAttribute("id", "weather-container");
+  weatherSectionElement.setAttribute("id", "weather");
   headerElement.appendChild(weatherSectionElement);
+  const textContainer = document.createElement('div');
+  textContainer.setAttribute('class','weather__container')
+  weatherSectionElement.appendChild(textContainer);
 
-  createElement('p',weatherSectionElement, weather.city_name, ['class'],['weather__city'] );
-  createElement('p',weatherSectionElement, weather.app_temp, ['class'],['weather__temp'] );
+
+
+  createElement('h2',weatherSectionElement, weather.city_name, ['class'],['weather__city'] );
   createElement('p',weatherSectionElement, weather.weather.description, ['class'],['weather__desc'] );
-  createElement('img',weatherSectionElement, 'NOTTEXT', ['class', 'src', 'style'],['weather__icon', returnWeatherCode(code), ' filter: invert(100%)'] );
+  createElement('p',textContainer, weather.app_temp, ['class'],['weather__temp'] );
+  createElement('img',textContainer, 'NOTTEXT', ['class', 'src', 'style'],['weather__icon', returnWeatherCode(code), ' filter: invert(100%)'] );
 
 
 };
 
-renderDateToUi();
+
+
 renderWeatherToUi();
+renderDateToUi();
