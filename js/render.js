@@ -25,7 +25,7 @@ function renderDateToUi() {
     ["date__current-day"]
   );
   createElement("p", dateDomElement, date.currentTime, ["class"], ["date__current-time"]);
-  createElement("p", dateDomElement, dateString);
+  createElement("p", dateDomElement, dateString, ['class'], ['descripton__paragraph']);
 }
 
 const returnWeatherCode = (code) => {
@@ -75,8 +75,8 @@ const renderWeatherToUi = async () => {
   weatherSectionElement.appendChild(textContainer);
 
   createElement('h2',weatherSectionElement, weather.city_name, ['class'],['weather__city'] );
-  createElement('p',weatherSectionElement, weather.weather.description, ['class'],['weather__desc'] );
-  createElement('p',textContainer, weather.app_temp, ['class'],['weather__temp'] );
+  createElement('p',weatherSectionElement, weather.weather.description, ['class'],['weather__desc descripton__paragraph'] );
+  createElement('p',textContainer, weather.app_temp + " F", ['class'],['weather__temp'] );
   createElement('img',textContainer, 'NOTTEXT', ['class', 'src', 'style'],['weather__icon', returnWeatherCode(code), ' filter: invert(100%)'] );
 
 };

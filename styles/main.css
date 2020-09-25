@@ -53,3 +53,31 @@ body {
   font-size: 40px;
   margin: 10px 0px;
 }
+
+@media only screen and (min-width: 1000px) {
+  .UI-header h2 {
+    font-size: 100px;
+    letter-spacing: .1rem;
+  }
+
+  .weather__icon {
+    height: 200px;
+    padding-right: 10px;
+  }
+  
+  .date__current-time {
+    font-size: 100px;
+    margin: 50px 0px;
+  }
+  
+  .weather__temp{
+    font-size: 80px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .descripton__paragraph{
+    font-size: 40px;
+    font-weight: 300;
+  }
+  
+}
